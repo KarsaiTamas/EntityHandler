@@ -13,4 +13,13 @@ public class EntityPlayer : Entity
     {
         StateFixedUpdateAction();
     }
+
+    protected override void EntityFixedUpdate()
+    {
+        print("Default Fixed Update Action");
+    }
+    protected override void EntityUpdate()
+    {
+        print("Default Update Action");
+    }
 }

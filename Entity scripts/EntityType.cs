@@ -4,5 +4,6 @@
 [System.Serializable]
 public enum EntityType
 {
-    Default
+    Default,
+    Player,
 }
