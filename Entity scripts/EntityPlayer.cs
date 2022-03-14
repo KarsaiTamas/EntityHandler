@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class EntityPlayer : Entity
 {
+    private List<float> stats;
+    public override List<float> Stats { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
+    protected override void Awake()
+    {
+        StateUpdateAction = CheckPlayerKeyEvents;
+        StateFixedUpdateAction = () => { print("Fixed Update Action"); };
+
+    }
+
+    private void CheckPlayerKeyEvents()
+    {
+
+    }
+
     protected virtual void Update()
     {
         StateUpdateAction();
     }
 
+
+
+
     protected virtual void FixedUpdate()
     {
         StateFixedUpdateAction();
-    }
-
-    protected override void EntityFixedUpdate()
-    {
-        print("Default Fixed Update Action");
-    }
-    protected override void EntityUpdate()
-    {
-        print("Default Update Action");
     }
 }

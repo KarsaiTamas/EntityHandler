@@ -6,6 +6,10 @@ public class EntityNPC : Entity
 {
     public bool isFriendly;
     public Entity target;
+
+    private List<float> stats;
+    public override List<float> Stats { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
     protected virtual void Update()
     {
         StateUpdateAction();
@@ -14,14 +18,5 @@ public class EntityNPC : Entity
     protected virtual void FixedUpdate()
     {
         StateFixedUpdateAction();
-    }
-
-    protected override void EntityFixedUpdate()
-    {
-        print("Default Fixed Update Action");
-    }
-    protected override void EntityUpdate()
-    {
-        print("Default Update Action");
     }
 }
